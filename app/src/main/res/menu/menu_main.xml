@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.tp1.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/reset"
+        android:title="reset formulaire"
+        android:onClick="onResetClicked"/>
+    <item
+        android:id="@+id/numtel"
+        android:title="ajout num tel"
+        android:onClick="onNumTelClick"/>
+
+    <item
+        android:title="Visite du département"
+        android:onClick="onVisiteDepartementClicked"
+        />
+</menu>
