@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginVertical="10dp">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_nom"
+        android:text="lebosq"
+        android:textAlignment="center">
+    </TextView>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_prenom"
+        android:text="yannael"
+        android:textAlignment="center">
+    </TextView>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_dob"
+        android:text="28/06/1989"
+        android:textAlignment="center"
+        >
+    </TextView>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_ville"
+        android:text="st brieuc"
+        android:textAlignment="center">
+    </TextView>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_departement"
+        android:text="cotes d'armor"
+        android:textAlignment="center">
+    </TextView>
 </LinearLayout>

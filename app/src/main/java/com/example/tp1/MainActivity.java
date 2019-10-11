@@ -20,11 +20,14 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.Toast;
 
 import java.util.Date;
+
+import Model.Client;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -70,22 +73,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onValiderClicked(View view) {
-        Log.i("Titre", "msg");
         String nom = ((TextInputLayout)findViewById(R.id.input_nom)).getEditText().getText().toString();
         String prenom = ((TextInputLayout)findViewById(R.id.input_prenom)).getEditText().getText().toString();
         String dob = ((EditText)findViewById(R.id.input_dob)).getText().toString();
         String ville = ((TextInputLayout)findViewById(R.id.input_ville)).getEditText().getText().toString();
         String departement = ((Spinner) findViewById(R.id.monSpinner)).getSelectedItem().toString();
-        Toast.makeText(getApplicationContext(),"prenom : " + prenom + "\nnom : " + nom + "\ndob : " + dob + "\nville : " + ville, Toast.LENGTH_SHORT).show();
-        Intent navigateToAnotherActivity = new Intent(getApplicationContext(), AnotherActivity.class);
-        navigateToAnotherActivity.putExtra("nom", nom);
-        navigateToAnotherActivity.putExtra("prenom", prenom);
-        navigateToAnotherActivity.putExtra("dob", dob);
-        navigateToAnotherActivity.putExtra("ville", ville);
-        navigateToAnotherActivity.putExtra("departement", departement);
-        navigateToAnotherActivity.putExtra("test", "testvaleur");
+        Client monClient = new Client(nom, prenom, dob, ville, departement);
 
-        startActivity(navigateToAnotherActivity);
+        Intent result = new Intent();
+        result.putExtra("client", monClient);
+        setResult(RESULT_OK, result);
+        finish();
+
+        //Intent navigateBackToRecyclerActivity = new Intent(getApplicationContext(), RecyclerActivity.class);
+        //navigateBackToRecyclerActivity.putExtra("client", monClient);
+
+        //setResult(RESULT_OK, navigateBackToRecyclerActivity);
+
+        //startActivity(navigateBackToRecyclerActivity);
     }
 
     public void onResetClicked(MenuItem item) {
